@@ -9,32 +9,29 @@
         android:id="@+id/homeFragment"
         android:name="com.syafa.mynavigation.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_categoryFragment"
             app:destination="@id/categoryFragment"
-            app:enterAnim="nav_default_enter_anim"
-            app:exitAnim="nav_default_exit_anim"
-            app:popEnterAnim="nav_default_pop_enter_anim"
-            app:popExitAnim="nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_homeFragment_to_profileActivity"
-            app:destination="@id/profileActivity"
-            app:enterAnim="@anim/side__in_right"
-            app:exitAnim="@anim/side_out_left" />
-    </fragment>
-    <fragment
-        android:id="@+id/categoryFragment"
-        android:name="com.syafa.mynavigation.CategoryFragment"
-        android:label="fragment_category"
-        tools:layout="@layout/fragment_category" >
-        <action
-            android:id="@+id/action_categoryFragment_to_detailCategoryFragment"
-            app:destination="@id/detailCategoryFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileActivity"
+            app:destination="@id/profileActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.syafa.mynavigation.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_detailCategoryFragment"
+            app:destination="@id/detailCategoryFragment" />
     </fragment>
     <activity
         android:id="@+id/profileActivity"
@@ -52,7 +49,7 @@
         tools:layout="@layout/fragment_detail_category">
         <argument
             android:name="name"
-            android:defaultValue="default name"
+            android:defaultValue="dafault name"
             app:argType="string" />
         <argument
             android:name="stock"
@@ -68,4 +65,5 @@
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
     </fragment>
+
 </navigation>
